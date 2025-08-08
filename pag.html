@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Análise e Redesign - DeliveryJá</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+      color: #222;
+      margin: 40px;
+      line-height: 1.6;
+    }
+
+    h1, h2, h3 {
+      color: #1E88E5;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    section {
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      margin-bottom: 30px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    strong {
+      color: #388E3C;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>UC10 – Análise e Redesign da Interface do App "DeliveryJá"</h1>
+
+  <section>
+    <h2>Parte 1: Análise Crítica da Interface</h2>
+
+    <h3>Análise das Cores</h3>
+    <p><strong>1.</strong> O uso de fundo preto com texto cinza escuro não é uma boa prática. Essa combinação compromete a legibilidade, causa fadiga visual e pode gerar sentimentos negativos. O material destaca que o preto não é ideal como cor de fundo em interfaces digitais.</p>
+
+    <p><strong>2.</strong> A combinação de azul-claro vibrante para botões e vermelho/verde para avisos pode ser confusa. Embora essas cores tenham forte associação visual, é preciso considerar contraste, consistência e acessibilidade (por exemplo, daltonismo).</p>
+
+    <p><strong>3.</strong> A síntese de cor utilizada em interfaces digitais é a <strong>sintese aditiva (RGB)</strong>, composta por vermelho, verde e azul, ideal para telas que emitem luz.</p>
+
+    <h3>Análise da Tipografia</h3>
+    <p><strong>1.</strong> A fonte "Times New Roman" (com serifa) não é adequada para interfaces digitais. Fontes sem serifa são mais legíveis em telas.</p>
+
+    <p><strong>2.</strong> O uso de caixa alta para nomes e descrições reduz o ritmo da leitura e passa a impressão de "grito". Deve ser evitado em blocos de texto.</p>
+
+    <p><strong>3.</strong> O uso de fonte pequena prejudica a leitura, especialmente em dispositivos móveis. Tamanho e espessura são fatores essenciais de legibilidade.</p>
+  </section>
+
+  <section>
+    <h2>Parte 2: Proposta de Redesign</h2>
+
+    <h3>1. Paleta de Cores</h3>
+    <ul>
+      <li><strong>Fundo:</strong> Cinza claro (#F2F2F2)</li>
+      <li><strong>Texto:</strong> Preto (#000000)</li>
+      <li><strong>Botões principais:</strong> Azul escuro (#1E88E5)</li>
+      <li><strong>Botões secundários:</strong> Cinza médio (#B0BEC5)</li>
+      <li><strong>Avisos de item esgotado:</strong> Vermelho escuro (#D32F2F)</li>
+      <li><strong>Avisos de promoção:</strong> Verde escuro (#388E3C)</li>
+    </ul>
+
+    <p>Essas cores oferecem contraste adequado, respeitam padrões de acessibilidade e comunicam significados de forma intuitiva.</p>
+
+    <h3>2. Tipografia</h3>
+    <ul>
+      <li><strong>Fonte:</strong> Roboto, Arial ou Verdana (sem serifa)</li>
+      <li><strong>Títulos:</strong> 18–22px, em negrito</li>
+      <li><strong>Subtítulos:</strong> 16px</li>
+      <li><strong>Corpo de texto:</strong> 14px</li>
+      <li><strong>Entrelinha:</strong> 1.5x o tamanho da fonte</li>
+    </ul>
+
+    <p>Fontes sem serifa aumentam a legibilidade. O espaçamento adequado e hierarquia visual melhoram a experiência de leitura.</p>
+
+    <h3>3. Estrutura do Conteúdo</h3>
+    <ul>
+      <li><strong>Título do prato:</strong> fonte maior, negrito</li>
+      <li><strong>Descrição:</strong> frase curta, caixa baixa</li>
+      <li><strong>Preço:</strong> em cor destacada (ex: verde)</li>
+      <li><strong>Status:</strong> banners coloridos com ícones (ex: alerta, estrela)</li>
+    </ul>
+
+    <p>Essa estrutura favorece o escaneamento rápido da informação e reduz a sobrecarga cognitiva.</p>
+  </section>
+
+  <section>
+    <h2>Conclusão</h2>
+    <p>A combinação eficaz entre cor e tipografia é essencial para criar interfaces acessíveis, agradáveis e funcionais. Essas escolhas devem considerar fatores técnicos (como contraste e legibilidade) e também culturais e emocionais, assegurando uma experiência positiva para o usuário.</p>
+  </section>
+
+</body>
+</html>

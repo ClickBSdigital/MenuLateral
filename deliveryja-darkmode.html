@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>DeliveryJá - Modo Claro/Escuro</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --cor-primaria: #1E88E5;
+      --cor-sucesso: #388E3C;
+      --cor-erro: #D32F2F;
+      --fundo-claro: #f2f2f2;
+      --fundo-escuro: #1e1e1e;
+      --texto-claro: #222;
+      --texto-escuro: #f2f2f2;
+      --branco: #ffffff;
+    }
+
+    body {
+      font-family: 'Roboto', sans-serif;
+      margin: 0;
+      padding: 0;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    header {
+      background-color: var(--cor-primaria);
+      color: var(--branco);
+      text-align: center;
+      padding: 20px 0;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    }
+
+    header h1 {
+      font-size: 28px;
+      margin-bottom: 5px;
+    }
+
+    header button {
+      margin-top: 10px;
+      background: #ffffff22;
+      color: #fff;
+      border: none;
+      padding: 8px 14px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    main {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    .cardapio {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+
+    .item {
+      background-color: var(--branco);
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.06);
+      position: relative;
+      transition: background-color 0.3s;
+    }
+
+    .item h2 {
+      font-size: 18px;
+      margin-bottom: 8px;
+    }
+
+    .descricao {
+      font-size: 14px;
+      color: #555;
+      margin-bottom: 12px;
+    }
+
+    .preco {
+      font-size: 16px;
+      font-weight: bold;
+      color: var(--cor-sucesso);
+    }
+
+    .status {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      font-size: 12px;
+      padding: 5px 10px;
+      border-radius: 20px;
+      color: #fff;
+    }
+
+    .promocao {
+      background-color: var(--cor-sucesso);
+    }
+
+    .esgotado {
+      background-color: var(--cor-erro);
+    }
+
+    .botao {
+      display: inline-block;
+      margin-top: 16px;
+      background-color: var(--cor-primaria);
+      color: white;
+      padding: 10px 14px;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: bold;
+      font-size: 14px;
+      transition: background-color 0.3s;
+    }
+
+    .botao:hover {
+      background-color: #1669c2;
+    }
+
+    .botao[disabled],
+    .esgotado-btn {
+      background-color: #ccc;
+      cursor: not-allowed;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 14px;
+      margin-top: 50px;
+      background-color: #e0e0e0;
+      transition: background-color 0.3s;
+    }
+
+    /* Estilos do modo escuro */
+    body.dark {
+      background-color: var(--fundo-escuro);
+      color: var(--texto-escuro);
+    }
+
+    body.dark .item {
+      background-color: #2a2a2a;
+      color: var(--texto-escuro);
+    }
+
+    body.dark .descricao {
+      color: #ccc;
+    }
+
+    body.dark footer {
+      background-color: #121212;
+      color: #ccc;
+    }
+
+    body.dark header button {
+      background-color: #ffffff44;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>DeliveryJá</h1>
+    <p>Comida boa, entrega rápida</p>
+    <button onclick="alternarModo()">Alternar Modo</button>
+  </header>
+
+  <main>
+    <h2 style="margin-bottom: 20px;">Cardápio do Restaurante</h2>
+    <div class="cardapio">
+
+      <!-- Item 1 -->
+      <div class="item">
+        <span class="status promocao">Promoção</span>
+        <h2>Feijoada Completa</h2>
+        <p class="descricao">Feijoada tradicional com arroz, farofa, couve e laranja.</p>
+        <p class="preco">R$ 29,90</p>
+        <a href="#" class="botao">Adicionar ao Carrinho</a>
+      </div>
+
+      <!-- Item 2 -->
+      <div class="item">
+        <h2>Salada Caesar</h2>
+        <p class="descricao">Alface americana, frango grelhado, croutons e molho especial.</p>
+        <p class="preco">R$ 21,00</p>
+        <a href="#" class="botao">Adicionar ao Carrinho</a>
+      </div>
+
+      <!-- Item 3 -->
+      <div class="item">
+        <span class="status esgotado">Esgotado</span>
+        <h2>Strogonoff de Carne</h2>
+        <p class="descricao">Acompanha arroz branco e batata palha crocante.</p>
+        <p class="preco">R$ 27,00</p>
+        <button class="botao esgotado-btn" disabled>Indisponível</button>
+      </div>
+
+      <!-- Item 4 -->
+      <div class="item">
+        <h2>Frango Grelhado</h2>
+        <p class="descricao">Filé de frango com legumes, arroz integral e salada.</p>
+        <p class="preco">R$ 25,50</p>
+        <a href="#" class="botao">Adicionar ao Carrinho</a>
+      </div>
+
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2025 DeliveryJá - Todos os direitos reservados.</p>
+  </footer>
+
+  <script>
+    function alternarModo() {
+      document.body.classList.toggle("dark");
+    }
+  </script>
+
+</body>
+</html>

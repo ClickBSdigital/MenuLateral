@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>DeliveryJá - Cardápio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: #f2f2f2;
+      color: #333;
+    }
+
+    header {
+      background-color: #1E88E5;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .container {
+      max-width: 960px;
+      margin: 30px auto;
+      padding: 0 20px;
+    }
+
+    h2 {
+      margin-bottom: 20px;
+      color: #1E88E5;
+    }
+
+    .cardapio {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+
+    .item {
+      background: white;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      position: relative;
+    }
+
+    .item h3 {
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+
+    .descricao {
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+
+    .preco {
+      font-size: 16px;
+      font-weight: bold;
+      color: #388E3C;
+    }
+
+    .status {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      padding: 5px 10px;
+      font-size: 12px;
+      border-radius: 20px;
+      color: white;
+    }
+
+    .promocao {
+      background-color: #388E3C;
+    }
+
+    .esgotado {
+      background-color: #D32F2F;
+    }
+
+    .botao {
+      margin-top: 15px;
+      display: inline-block;
+      background-color: #1E88E5;
+      color: white;
+      padding: 10px 16px;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .botao:disabled, .esgotado-btn {
+      background-color: #ccc;
+      cursor: not-allowed;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #eee;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>DeliveryJá</h1>
+    <p>Seu pedido, rápido e fácil!</p>
+  </header>
+
+  <div class="container">
+    <h2>Cardápio - Restaurante Sabor Caseiro</h2>
+
+    <div class="cardapio">
+
+      <!-- Item 1 -->
+      <div class="item">
+        <span class="status promocao">Promoção</span>
+        <h3>Feijoada Completa</h3>
+        <p class="descricao">Feijoada tradicional com arroz, farofa, couve e laranja.</p>
+        <p class="preco">R$ 29,90</p>
+        <a href="#" class="botao">Adicionar ao Carrinho</a>
+      </div>
+
+      <!-- Item 2 -->
+      <div class="item">
+        <h3>Filé de Frango Grelhado</h3>
+        <p class="descricao">Filé com arroz integral, legumes salteados e salada verde.</p>
+        <p class="preco">R$ 24,50</p>
+        <a href="#" class="botao">Adicionar ao Carrinho</a>
+      </div>
+
+      <!-- Item 3 -->
+      <div class="item">
+        <span class="status esgotado">Esgotado</span>
+        <h3>Strogonoff de Carne</h3>
+        <p class="descricao">Acompanha arroz branco e batata palha crocante.</p>
+        <p class="preco">R$ 27,00</p>
+        <button class="botao esgotado-btn" disabled>Indisponível</button>
+      </div>
+
+      <!-- Item 4 -->
+      <div class="item">
+        <h3>Salada Caesar</h3>
+        <p class="descricao">Alface americana, frango, croutons, parmesão e molho Caesar.</p>
+        <p class="preco">R$ 21,00</p>
+        <a href="#" class="botao">Adicionar ao Carrinho</a>
+      </div>
+
+    </div>
+  </div>
+
+  <footer>
+    <p>© 2025 DeliveryJá - Todos os direitos reservados.</p>
+  </footer>
+
+</body>
+</html>
